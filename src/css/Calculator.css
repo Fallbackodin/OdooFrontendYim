@@ -1,0 +1,27 @@
+.calculator {
+    width: 50%;
+    text-align: center;
+    margin: auto;
+}
+
+.calculator-val {
+    text-align: right;
+    border-style: solid;
+    border-width: 1px;
+    margin: 0;
+    margin-top: 10px;
+}
+
+.calculator-button {
+    /* margin-top: 10px; */
+}
+
+.calculator-row {
+    display: flex;
+    /* width: 50%; */
+    margin: auto;
+}
+
+.calculator-column {
+    flex: 33%;
+}
