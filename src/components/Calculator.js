@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../css/Calculator.css";
 
 export default function Calculator() {
-    const [userVal, setUserVal] = useState("0");
+    const [userVal, setUserVal] = useState(0);
 
     const handleClick = (e) => {
         // console.log(e.target.value);
@@ -10,8 +10,23 @@ export default function Calculator() {
         if (!isNaN(e.target.value)) {
             console.log(e.target.value);
 
-            if (userVal != "0") setUserVal(userVal + e.target.value);
-            else setUserVal(e.target.value);
+            if (userVal != 0) {
+                setUserVal(userVal * 10 + parseInt(e.target.value));
+            } else {
+                setUserVal(parseInt(e.target.value));
+            }
+        } else if (e.target.value === "Start") {
+            console.log("While Loop");
+            let userTempVal = userVal;
+            while (userTempVal > 0) {
+                userTempVal--;
+
+                setTimeout(() => {
+                    console.log(userTempVal);
+                    // setUserVal(userTempVal);
+                }, 0);
+            }
+            setUserVal("Happy Birthday!");
         }
     };
 
